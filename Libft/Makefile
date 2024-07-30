@@ -6,12 +6,13 @@
 #    By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/09 07:11:04 by aumartin          #+#    #+#              #
-#    Updated: 2024/07/11 18:15:35 by aumartin         ###   ########.fr        #
+#    Updated: 2024/07/30 11:11:25 by aumartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    	= libft.a
 LIBFT		= libft/ft_atoi.c\
+		libft/ft_atol.c\
 		libft/ft_bzero.c\
 		libft/ft_calloc.c\
 		libft/ft_isalnum.c\
