@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:03:53 by aumartin          #+#    #+#             */
-/*   Updated: 2024/07/23 10:41:55 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:31:04 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	main(int ac, char **av)
 	t_stack	b;
 	char	**processed_args;
 
+	if (ac < 2 || !av[1][0])
+		return (0);
 	processed_args = process_arguments(&ac, av);
 	if (!validate_input(ac, processed_args))
 	{
@@ -94,9 +96,9 @@ int	main(int ac, char **av)
 	init_stack(&b, ac);
 	fill_stack(&a, ac, processed_args);
 
-	ft_printf("a.size %d\n", a.size);
+/* 	ft_printf("a.size %d\n", a.size);
 	for (int j = 0; j < a.size; j++)
-		ft_printf("Stack filled. Data[%d]: %d\n", j, a.data[j]);
+		ft_printf("Stack filled. Data[%d]: %d\n", j, a.data[j]); */
 
 	if (!check_duplicates(a.data, a.size))
 	{
@@ -119,8 +121,8 @@ int	main(int ac, char **av)
 			radix_sort(&a, &b);
 	}
 
-	for (int j = 0; j < a.size; j++)
-		ft_printf("Stack sorted. Data[%d]: %d\n", j, a.data[j]);
+/* 	for (int j = 0; j < a.size; j++)
+		ft_printf("Stack sorted. Data[%d]: %d\n", j, a.data[j]); */
 
 	free(a.data);
 	free(b.data);

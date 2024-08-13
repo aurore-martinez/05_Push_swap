@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 12:02:11 by aumartin          #+#    #+#             */
-/*   Updated: 2024/07/20 10:13:14 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:18:31 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	validate_input(int ac, char **av)
 	int	i;
 	int	j;
 
-	if (ac < 2)
-		return (0);
 	i = 0;
 	while (i < ac)
 	{

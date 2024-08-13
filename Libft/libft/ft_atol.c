@@ -6,9 +6,11 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 11:07:31 by aumartin          #+#    #+#             */
-/*   Updated: 2024/07/30 11:07:54 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:14:37 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 long	ft_atol(const char *str)
 {
