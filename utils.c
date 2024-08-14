@@ -6,44 +6,61 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:58:58 by aumartin          #+#    #+#             */
-/*   Updated: 2024/07/30 11:07:47 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/14 10:46:18 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Parcourt tous les éléments de la pile a pour trouver la valeur maximale. */
-
-int	find_max(t_stack *a)
+int	contains_negative(t_stack *a)
 {
-	int	max;
 	int	i;
 
-	max = a->data[0];
-	i = 1;
+	i = 0;
 	while (i < a->size)
 	{
-		if (a->data[i] > max)
-			max = a->data[i];
+		if (a->data[i] < 0)
+			return (1);
 		i++;
 	}
-	return (max);
+	return (0);
 }
-/* Calcule le nombre de bits nécessaires pour représenter un nombre donné
-en utilisant des décalages binaires vers la droite (>>). Pour chaque décalage,
-le nombre est divisé par 2, et le compteur de bits (bits) est incrémenté jusqu'à
-ce que le nombre soit réduit à zéro. Cela nous donne le nombre de bits
-nécessaires pour représenter le nombre en binaire. */
-
-int	find_max_bits(int num)
+void	free_split_args(char **split_args)
 {
-	int	bits;
+	int	i;
 
-	bits = 0;
-	while (num)
+	if (split_args)
 	{
-		num >>= 1;
-		bits++;
+		i = 0;
+		while (split_args[i])
+		{
+			free(split_args[i]);
+			i++;
+		}
+		free(split_args);
 	}
-	return (bits);
+}
+
+char	**process_arguments(int *argc, char **argv)
+{
+	char	**processed_args;
+
+	processed_args = NULL;
+	if (*argc == 2)
+	{
+		processed_args = ft_split(argv[1], ' ');
+		if (!processed_args)
+			print_error_and_exit();
+		*argc = 0;
+		while (processed_args[*argc])
+		{
+			(*argc)++;
+		}
+	}
+	else
+	{
+		processed_args = argv + 1;
+		(*argc)--;
+	}
+	return (processed_args);
 }

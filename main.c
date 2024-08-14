@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:03:53 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/13 15:31:04 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/14 11:53:22 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,45 +37,7 @@
 	free(b.data);
 	return (0);
 } */
-void	free_split_args(char **split_args)
-{
-	int	i;
 
-	if (split_args)
-	{
-		i = 0;
-		while (split_args[i])
-		{
-			free(split_args[i]);
-			i++;
-		}
-		free(split_args);
-	}
-}
-
-char	**process_arguments(int *argc, char **argv)
-{
-	char	**processed_args;
-
-	processed_args = NULL;
-	if (*argc == 2)
-	{
-		processed_args = ft_split(argv[1], ' ');
-		if (!processed_args)
-			print_error_and_exit();
-		*argc = 0;
-		while (processed_args[*argc])
-		{
-			(*argc)++;
-		}
-	}
-	else
-	{
-		processed_args = argv + 1;
-		(*argc)--;
-	}
-	return (processed_args);
-}
 
 int	main(int ac, char **av)
 {
@@ -111,17 +73,13 @@ int	main(int ac, char **av)
 
 	if (!is_sorted(&a))
 	{
-		if (a.size <= 2)
-			sort_2(&a);
-		else if (a.size == 3)
-			sort_3(&a);
-		else if (a.size <= 5)
-			sort_5(&a, &b);
+		if (a.size <= 5)
+			sort_small_stack(&a, &b);
 		else
 			radix_sort(&a, &b);
 	}
 
-/* 	for (int j = 0; j < a.size; j++)
+/* 		for (int j = 0; j < a.size; j++)
 		ft_printf("Stack sorted. Data[%d]: %d\n", j, a.data[j]); */
 
 	free(a.data);
@@ -130,3 +88,4 @@ int	main(int ac, char **av)
 		free_split_args(processed_args);
 	return (0);
 }
+

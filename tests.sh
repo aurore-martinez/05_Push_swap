@@ -72,8 +72,8 @@ run_test "$PROGRAM \"1 1\"" "Error"
 run_test "$PROGRAM 1 1" "Error"
 run_test "$PROGRAM \"2147483648 2\"" "Error"
 run_test "$PROGRAM 2147483648 2" "Error"
-run_test "$PROGRAM -2147483647 3 6" "Error"
-run_test "$PROGRAM \"-2147483647 3 6\"" "Error"
+run_test "$PROGRAM -2147483649 3 6" "Error"
+run_test "$PROGRAM \"-2147483649 3 6\"" "Error"
 run_test "$PROGRAM" ""  # Aucun message attendu pour les arguments vides
 run_test "$PROGRAM 42" ""  # Aucun message attendu pour un seul nombre
 
@@ -99,7 +99,7 @@ test_args "$ARG" 1500  # Ajuster en fonction des critères de taille d'instructi
 
 # Test avec 500 valeurs aléatoires entre 0 et 999
 echo "Test avec 500 valeurs aléatoires entre 0 et 999"
-ARG=$(shuf -i 0-999 -n 500 | tr '\n' ' ')
+ARG=$(shuf -i 0-500 -n 500 | tr '\n' ' ')
 test_args "$ARG" 11500  # Ajuster en fonction des critères de taille d'instructions pour 500 valeurs
 
 

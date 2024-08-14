@@ -1,40 +1,16 @@
 /* ************************************************************************** */
-/*                                                                           */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   small_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 10:20:22 by aumartin          #+#    #+#             */
-/*   Updated: 2024/07/17 17:17:22 by aumartin         ###   ########.fr       */
+/*   Created: 2024/08/14 10:35:53 by aumartin          #+#    #+#             */
+/*   Updated: 2024/08/14 11:35:24 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-/* 	// Affichage des éléments de la pile pour controle
-	ft_printf("a->data[0] : %d\n", a->data[0]);
-	ft_printf("a->data[1] : %d\n", a->data[1]);
-	ft_printf("a->data[2] : %d\n", a->data[2]); */
-
-int	is_sorted(t_stack *stack)
-{
-	int	sorted;
-	int	i;
-
-	sorted = 1;
-	i = 0;
-	while (i < stack->size - 1)
-	{
-		if (stack->data[i] > stack->data[i + 1])
-		{
-			sorted = 0;
-			break ;
-		}
-		i++;
-	}
-	return (sorted);
-}
+#include "../push_swap.h"
 
 void	sort_2(t_stack *a)
 {
@@ -104,31 +80,12 @@ void	sort_5(t_stack *a, t_stack *b)
 		pa(a, b);
 }
 
-void	radix_sort(t_stack *a, t_stack *b)
+void	sort_small_stack(t_stack *a, t_stack *b)
 {
-	int	max_num;
-	int	max_bits;
-	int	i;
-	int	j;
-	int	size;
-
-	max_num = find_max(a);
-	max_bits = find_max_bits(max_num);
-	i = 0;
-	while (i < max_bits)
-	{
-		j = 0;
-		size = a->size;
-		while (j < size)
-		{
-			if (((a->data[0] >> i) & 1) == 0)
-				pb(a, b);
-			else
-				ra(a);
-			j++;
-		}
-		while (b->size > 0)
-			pa(a, b);
-		i++;
-	}
+	if (a->size <= 2)
+		sort_2(a);
+	else if (a->size == 3)
+		sort_3(a);
+	else if (a->size <= 5)
+		sort_5(a, b);
 }

@@ -6,7 +6,7 @@
 #    By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/08 13:19:31 by aumartin          #+#    #+#              #
-#    Updated: 2024/07/18 12:05:21 by aumartin         ###   ########.fr        #
+#    Updated: 2024/08/14 11:26:10 by aumartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT = Libft/libft.a
-SRC = main.c utils.c stack.c sort.c error_management.c moves/swaps.c moves/pushes.c moves/rotates.c moves/reverse_rotates.c
+SRC = main.c utils.c stack.c error_management.c \
+	moves/swaps.c moves/pushes.c moves/rotates.c moves/reverse_rotates.c \
+	sort/big_stack.c sort/small_stack.c sort/utils.c
 OBJ = $(SRC:.c=.o)
 
 # Séquences d'échappement ANSI pour les couleurs

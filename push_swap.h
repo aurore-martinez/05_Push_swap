@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:58:40 by aumartin          #+#    #+#             */
-/*   Updated: 2024/07/18 14:26:18 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/14 11:16:53 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,24 @@ int		check_int_limits(char *str);
 void	print_error_and_exit(void);
 
 /* Prototypes fonctions utils */
-long	ft_atol(const char *str);
-int		find_max(t_stack *a);
-int		find_max_bits(int num);
+int		contains_negative(t_stack *a);
+void	free_split_args(char **split_args);
+char	**process_arguments(int *argc, char **argv);
 
 /* Prototypes fonctions sort */
-int		is_sorted(t_stack *stack);
 void	sort_2(t_stack *a);
 void	sort_3(t_stack *a);
 void	sort_5(t_stack *a, t_stack *b);
+void	sort_small_stack(t_stack *a, t_stack *b);
+
 void	radix_sort(t_stack *a, t_stack *b);
+void	turkish_sort(t_stack *a, t_stack *b);
+void	quicksort(t_stack *a, t_stack *b);
+void	sort_big_stack(t_stack *a, t_stack *b);
+
+int		is_sorted(t_stack *stack);
+int		find_max(t_stack *a);
+int		find_max_bits(int num);
+void	move_negatives_to_b(t_stack *a, t_stack *b);
 
 #endif
