@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 10:19:27 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/14 11:21:31 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:42:23 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,18 @@ void	print_stack(t_stack *a, t_stack *b)
 	ft_printf("a b\n");
 	ft_printf("----------------------------------------\n");
 }
+
+void	setup_stack(t_stack *a, t_stack *b, int ac, char **processed_args)
+{
+	init_stack(a, ac);
+	init_stack(b, ac);
+	fill_stack(a, ac, processed_args);
+}
+
+void	cleanup_stack(t_stack *a, t_stack *b, char **processed_args)
+{
+	free(a->data);
+	free(b->data);
+	free_split_args(processed_args);
+}
+

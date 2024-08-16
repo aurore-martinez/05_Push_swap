@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:45:16 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/14 10:45:40 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:36:27 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,4 @@ int	find_max_bits(int num)
 		bits++;
 	}
 	return (bits);
-}
-
-void	move_negatives_to_b(t_stack *a, t_stack *b)
-{
-	while (a->size > 0)
-	{
-		if (a->data[0] < 0)
-			pb(a, b);
-		else
-			ra(a);
-	}
 }
