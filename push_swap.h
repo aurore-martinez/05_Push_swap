@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:58:40 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/16 15:45:05 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/30 16:09:49 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,12 @@ void	sort_5(t_stack *a, t_stack *b);
 void	sort_small_stack(t_stack *a, t_stack *b);
 void	sort_big_stack(t_stack *a, t_stack *b);
 void	radix_sort(t_stack *a, t_stack *b);
+void	algo_turc(t_stack *a, t_stack *b);
 
 
 int		is_sorted(t_stack *stack);
 int		find_max(t_stack *a);
 int		find_max_bits(int num);
+int		find_max_index(t_stack *b);
 
 #endif

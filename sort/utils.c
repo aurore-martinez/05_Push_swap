@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:45:16 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/16 14:36:27 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/08/30 16:09:10 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,18 @@ int	find_max_bits(int num)
 		bits++;
 	}
 	return (bits);
+}
+
+// Fonction pour trouver l'index du plus grand élément dans la pile b
+int	find_max_index(t_stack *b)
+{
+	int i;
+	int max_index = 0;
+
+	for (i = 1; i < b->size; i++)
+	{
+		if (b->data[i] > b->data[max_index])
+			max_index = i;
+	}
+	return max_index;
 }
