@@ -130,14 +130,14 @@ void sort_10(t_stack *a, t_stack *b)
 
 
 
-1. Décomposer le problème en plusieurs parties
+/* 1. Décomposer le problème en plusieurs parties
 
 Avec 100 ou 500 éléments, essayer de trouver le coût pour chaque élément individuellement serait trop lent et inefficace. Une approche plus pragmatique consiste à diviser STACK_A en plusieurs segments ou "chunks" et de traiter chaque chunk séparément.
 2. Diviser STACK_A en chunks
 
 L'idée est de diviser STACK_A en segments ou "chunks" de taille fixe. On peut commencer par diviser en 5 ou 10 chunks, en fonction du nombre total d'éléments.
+ */
 
-c
 
 void chunk_sort(t_stack *a, t_stack *b, int chunk_size)
 {
@@ -157,11 +157,11 @@ void chunk_sort(t_stack *a, t_stack *b, int chunk_size)
 	reinsert_sorted_b_to_a(a, b);
 }
 
-3. Pousser chaque chunk de STACK_A à STACK_B
+/* 3. Pousser chaque chunk de STACK_A à STACK_B
 
 Ensuite, pour chaque chunk, vous sélectionnez les éléments qui appartiennent à ce chunk et les poussez à STACK_B, en utilisant l'approche de coût minimale décrite précédemment.
+ */
 
-c
 
 void push_chunk_to_b(t_stack *a, t_stack *b, int chunk_start, int chunk_end)
 {
@@ -182,11 +182,10 @@ void push_chunk_to_b(t_stack *a, t_stack *b, int chunk_start, int chunk_end)
 	}
 }
 
-4. Réinsertion des éléments de STACK_B à STACK_A
+/* 4. Réinsertion des éléments de STACK_B à STACK_A
 
 Une fois que tous les éléments sont triés dans STACK_B, vous les réinsérez dans STACK_A en utilisant une approche similaire, en vous assurant que chaque élément est placé à sa position correcte dans STACK_A.
-
-c
+ */
 
 void reinsert_sorted_b_to_a(t_stack *a, t_stack *b)
 {
@@ -197,11 +196,10 @@ void reinsert_sorted_b_to_a(t_stack *a, t_stack *b)
 	}
 }
 
-5. Fonction principale pour le tri de 100 ou 500 éléments
+/* 5. Fonction principale pour le tri de 100 ou 500 éléments
 
-Voici comment intégrer tout cela dans une fonction unique qui triera les éléments :
+Voici comment intégrer tout cela dans une fonction unique qui triera les éléments : */
 
-c
 
 void sort_large_stack(t_stack *a, t_stack *b)
 {
@@ -214,7 +212,7 @@ void sort_large_stack(t_stack *a, t_stack *b)
 	finalize_sort(a); // Mise en place du minimum en haut de la pile A
 }
 
-Détails supplémentaires
+/* Détails supplémentaires
 
     move_max_to_top : Cette fonction déplace l'élément maximum de STACK_B au sommet avant de le pousser dans STACK_A.
     finalize_sort : Cette fonction vérifie que STACK_A est bien trié en s'assurant que le plus petit élément est en haut.
@@ -222,3 +220,4 @@ Détails supplémentaires
 Conclusion
 
 Cette méthode n'est pas aussi rapide qu'un algorithme comme Radix Sort, mais elle reste efficace pour trier 100 ou 500 éléments en utilisant des concepts simples. L'utilisation de chunks permet de gérer un grand nombre d'éléments en petits blocs, rendant l'algorithme plus maniable et performant sur des stacks plus importants.
+ */
