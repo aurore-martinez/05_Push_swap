@@ -6,7 +6,7 @@
 #    By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/08 13:19:31 by aumartin          #+#    #+#              #
-#    Updated: 2024/08/30 16:12:37 by aumartin         ###   ########.fr        #
+#    Updated: 2024/09/03 11:17:17 by aumartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ else
 endif
 
 NAME = push_swap
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT = Libft/libft.a
 SRC = main.c utils.c stack.c error_management.c \
