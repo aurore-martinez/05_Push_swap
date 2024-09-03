@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:58:40 by aumartin          #+#    #+#             */
-/*   Updated: 2024/09/03 14:35:00 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/09/03 14:38:33 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,5 @@ int		find_max(t_stack *a);
 int		find_max_bits(int num);
 int		find_max_index(t_stack *b);
 void	find_min(t_stack *a, int *min_value, int *min_index);
-
 
 #endif
