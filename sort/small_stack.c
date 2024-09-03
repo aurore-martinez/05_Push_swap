@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:35:53 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/14 11:35:24 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/09/03 14:28:55 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	sort_3(t_stack *a)
 		sa(a);
 }
 
-void	sort_5(t_stack *a, t_stack *b)
+/* void	sort_5(t_stack *a, t_stack *b)
 {
 	int	min_value;
 	int	min_index;
@@ -78,6 +78,41 @@ void	sort_5(t_stack *a, t_stack *b)
 	sort_3(a);
 	while (b->size > 0)
 		pa(a, b);
+} */
+
+void	sort_5(t_stack *a, t_stack *b)
+{
+	int	min_value;
+	int	min_index;
+
+	while (a->size > 3)
+	{
+		find_min(a, &min_value, &min_index);
+		move_min_to_top(a, min_index);
+		pb(a, b);
+	}
+	sort_3(a);
+	while (b->size > 0)
+		pa(a, b);
+}
+
+void	sort_10(t_stack *a, t_stack *b)
+{
+	int	min_value;
+	int	min_index;
+	int	count;
+
+	count = 0;
+	while (a->size > 5)
+	{
+		find_min(a, &min_value, &min_index);
+		move_min_to_top(a, min_index);
+		pb(a, b);
+		count++;
+	}
+	sort_5(a, b);
+	while (count-- > 0)
+		pa(a, b);
 }
 
 void	sort_small_stack(t_stack *a, t_stack *b)
@@ -88,4 +123,6 @@ void	sort_small_stack(t_stack *a, t_stack *b)
 		sort_3(a);
 	else if (a->size <= 5)
 		sort_5(a, b);
+	else if (a->size <= 10)
+		sort_10(a, b);
 }

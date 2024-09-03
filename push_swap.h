@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:58:40 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/30 16:09:49 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/09/03 14:35:00 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+void	move_min_to_top(t_stack *a, int min_index);
 
 /* Prototypes fonctions stack */
 void	init_stack(t_stack *stack, int capacity);
@@ -47,7 +48,6 @@ void	fill_stack(t_stack *stack, int argc, char **argv);
 void	print_stack(t_stack *a, t_stack *b);
 void	setup_stack(t_stack *a, t_stack *b, int ac, char **processed_args);
 void	cleanup_stack(t_stack *a, t_stack *b, char **processed_args);
-
 
 /* Prototypes fonctions error_management */
 int		validate_input(int ac, char **av);
@@ -64,15 +64,17 @@ char	**process_arguments(int *argc, char **argv);
 void	sort_2(t_stack *a);
 void	sort_3(t_stack *a);
 void	sort_5(t_stack *a, t_stack *b);
+void	sort_10(t_stack *a, t_stack *b);
 void	sort_small_stack(t_stack *a, t_stack *b);
 void	sort_big_stack(t_stack *a, t_stack *b);
 void	radix_sort(t_stack *a, t_stack *b);
 void	algo_turc(t_stack *a, t_stack *b);
 
-
 int		is_sorted(t_stack *stack);
 int		find_max(t_stack *a);
 int		find_max_bits(int num);
 int		find_max_index(t_stack *b);
+void	find_min(t_stack *a, int *min_value, int *min_index);
+
 
 #endif

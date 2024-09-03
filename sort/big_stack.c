@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:43:08 by aumartin          #+#    #+#             */
-/*   Updated: 2024/09/03 11:16:06 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/09/03 14:06:47 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	algo_turc(t_stack *a, t_stack *b)
 	// Pousser tous les éléments de a vers b
 	while (a->size > 0)
 		pb(a, b);
+
+		// optimise pour calculer le meilleur value qui va dans la b (celui qui coute le moins cher)
 
 	// Réinsérer les éléments de b vers a en triant
 	while (b->size > 0)
