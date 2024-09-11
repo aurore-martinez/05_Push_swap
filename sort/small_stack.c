@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:35:53 by aumartin          #+#    #+#             */
-/*   Updated: 2024/09/03 14:28:55 by aumartin         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:46:56 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	sort_2(t_stack *a)
 		sa(a);
 }
 
-void	sort_3(t_stack *a)
+/* void	sort_3(t_stack *a)
 {
 	int	max_value;
 
@@ -35,7 +35,7 @@ void	sort_3(t_stack *a)
 		rra(a);
 	if (a->data[a->size - 3] > a->data[a->size - 2])
 		sa(a);
-}
+} */
 
 /* void	sort_5(t_stack *a, t_stack *b)
 {
@@ -80,7 +80,7 @@ void	sort_3(t_stack *a)
 		pa(a, b);
 } */
 
-void	sort_5(t_stack *a, t_stack *b)
+/* void	sort_5(t_stack *a, t_stack *b)
 {
 	int	min_value;
 	int	min_index;
@@ -95,6 +95,7 @@ void	sort_5(t_stack *a, t_stack *b)
 	while (b->size > 0)
 		pa(a, b);
 }
+*/
 
 void	sort_10(t_stack *a, t_stack *b)
 {
@@ -113,6 +114,42 @@ void	sort_10(t_stack *a, t_stack *b)
 	sort_5(a, b);
 	while (count-- > 0)
 		pa(a, b);
+}
+
+void	sort_3(t_stack *a)
+{
+	int	max_value;
+
+	if (a->size != 3)
+		return ;
+	max_value = find_max(a);
+	if (is_sorted(a))
+		return ;
+	if (a->data[0] == max_value)
+		ra(a);
+	else if (a->data[1] == max_value)
+		rra(a);
+	if (a->data[0] > a->data[1])
+		sa(a);
+}
+
+
+void	sort_5(t_stack *a, t_stack *b)
+{
+	while (a->size > 3)
+		pb(a, b);
+	sort_3(a);
+	while (b->size > 0)
+		pa(a, b);
+	finalize_sort(a);
+}
+
+void	finalize_sort(t_stack *a)
+{
+	int	min_index;
+
+	find_min(a, NULL, &min_index);
+	move_min_to_top(a, min_index);
 }
 
 void	sort_small_stack(t_stack *a, t_stack *b)
