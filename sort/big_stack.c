@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:43:08 by aumartin          #+#    #+#             */
-/*   Updated: 2024/09/11 10:41:55 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:43:13 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,22 +45,22 @@ void	radix_sort(t_stack *a, t_stack *b)
 		i++;
 	}
 }
+/* Pousser tous les éléments de a vers b
+	optimise pour calculer le meilleur value qui va dans la b
+	(celui qui coute le moins cher)
+Réinsérer les éléments de b vers a en triant
+	Mettre l'élément maximum au sommet de b
+Pousser l'élément maximum vers a */
 
 void	algo_turc(t_stack *a, t_stack *b)
 {
 	int	max_index;
 
-	// Pousser tous les éléments de a vers b
 	while (a->size > 0)
 		pb(a, b);
-
-		// optimise pour calculer le meilleur value qui va dans la b (celui qui coute le moins cher)
-
-	// Réinsérer les éléments de b vers a en triant
 	while (b->size > 0)
 	{
 		max_index = find_max_index(b);
-		// Mettre l'élément maximum au sommet de b
 		if (max_index <= b->size / 2)
 		{
 			while (max_index-- > 0)
@@ -72,7 +72,7 @@ void	algo_turc(t_stack *a, t_stack *b)
 			while (max_index-- > 0)
 				rrb(b);
 		}
-		pa(a, b); // Pousser l'élément maximum vers a
+		pa(a, b);
 	}
 }
 

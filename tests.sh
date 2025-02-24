@@ -2,7 +2,7 @@
 
 # Nom du programme
 PROGRAM="./push_swap"
-CHECKER="./checker_linux"
+CHECKER="./checker_MAC"
 
 # Fonction pour compter le nombre d'instructions
 count_instructions() {
@@ -35,6 +35,7 @@ test_args() {
   # Exécute checker_linux
   echo "Exécute checker_linux" :
   echo "$instructions" | $CHECKER $args
+  echo "---------------------------"
 }
 
 # Fonction pour exécuter un test
@@ -85,7 +86,9 @@ run_test "$PROGRAM 2 3" ""  # Liste déjà triée, donc pas de sortie
 run_test "$PROGRAM 0 1 2 3" ""  # Liste déjà triée, donc pas de sortie
 run_test "$PROGRAM 0 1 2 3 4 5 6 7 8 9" ""  # Liste déjà triée, donc pas de sortie
 
-echo "Running tests with random values..."
+echo "
+Running tests with random values...
+"
 
 # Test avec 5 valeurs aléatoires entre 0 et 99
 echo "Test avec 5 valeurs aléatoires entre 0 et 99"

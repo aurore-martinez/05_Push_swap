@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:55:51 by aumartin          #+#    #+#             */
-/*   Updated: 2024/05/28 14:06:57 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:10:16 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	**ft_split(char *str, char c)
 	{
 		if (*str != c)
 		{
-		strings[index] = get_word(str, c);
+			strings[index] = get_word(str, c);
 			if (!strings[index])
 				return (free_split(strings, index), NULL);
 			index++;

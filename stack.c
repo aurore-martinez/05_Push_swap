@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 10:19:27 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/16 14:42:23 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:00:15 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ void	cleanup_stack(t_stack *a, t_stack *b, char **processed_args)
 	free(b->data);
 	free_split_args(processed_args);
 }
-

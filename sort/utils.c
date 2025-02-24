@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:45:16 by aumartin          #+#    #+#             */
-/*   Updated: 2024/09/03 14:30:27 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:08:45 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	is_sorted(t_stack *stack)
 	}
 	return (sorted);
 }
-
 /* Parcourt tous les éléments de la pile a pour trouver la valeur maximale. */
 
 int	find_max(t_stack *a)
@@ -84,21 +83,25 @@ int	find_max_index(t_stack *b)
 	return (max_index);
 }
 
-void	find_min(t_stack *a, int *min_value, int *min_index)
+/* Trouve la valeur minimale et son index dans la pile */
+int	find_min(t_stack *a, int *min_index)
 {
 	int	i;
+	int	min_value;
 
-	*min_value = a->data[0];
+	if (a->size == 0)
+		return (-1);
+	min_value = a->data[0];
 	*min_index = 0;
 	i = 1;
 	while (i < a->size)
 	{
-		if (a->data[i] < *min_value)
+		if (a->data[i] < min_value)
 		{
-			*min_value = a->data[i];
+			min_value = a->data[i];
 			*min_index = i;
 		}
 		i++;
 	}
+	return (0);
 }
-

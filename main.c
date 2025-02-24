@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:03:53 by aumartin          #+#    #+#             */
-/*   Updated: 2024/09/04 14:41:47 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:00:34 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int ac, char **av)
 	}
 	if (!is_sorted(&a))
 	{
-		if (a.size <= 5)
+		if (a.size <= 10)
 			sort_small_stack(&a, &b);
 		else
 			sort_big_stack(&a, &b);
@@ -51,4 +51,3 @@ int	main(int ac, char **av)
 		free_split_args(processed_args);
 	return (0);
 }
-

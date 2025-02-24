@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:56:08 by aumartin          #+#    #+#             */
-/*   Updated: 2024/05/28 14:05:50 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:10:37 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static size_t	count_size(long nb)
 	size = 0;
 	if (nb < 0)
 	{
-	nb = nb * (-1);
+		nb = nb * (-1);
 		size = 1;
 	}
 	if (nb == 0)

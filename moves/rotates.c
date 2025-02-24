@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 11:31:12 by aumartin          #+#    #+#             */
-/*   Updated: 2024/09/03 14:30:52 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:01:53 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,3 @@ void	rr(t_stack *a, t_stack *b)
 	a->operation_count++;
 	b->operation_count++;
 }
-

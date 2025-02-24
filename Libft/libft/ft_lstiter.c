@@ -6,7 +6,7 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 11:51:31 by aumartin          #+#    #+#             */
-/*   Updated: 2024/05/27 12:09:44 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:09:46 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	while (lst && f)
 	{
 		f(lst->content);
-			lst = lst->next;
+		lst = lst->next;
 	}
 }

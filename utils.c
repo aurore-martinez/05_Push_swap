@@ -6,25 +6,12 @@
 /*   By: aumartin <aumartin@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:58:58 by aumartin          #+#    #+#             */
-/*   Updated: 2024/08/14 10:46:18 by aumartin         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:06:53 by aumartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	contains_negative(t_stack *a)
-{
-	int	i;
-
-	i = 0;
-	while (i < a->size)
-	{
-		if (a->data[i] < 0)
-			return (1);
-		i++;
-	}
-	return (0);
-}
 void	free_split_args(char **split_args)
 {
 	int	i;
@@ -63,4 +50,18 @@ char	**process_arguments(int *argc, char **argv)
 		(*argc)--;
 	}
 	return (processed_args);
+}
+
+int	contains_negative(t_stack *a)
+{
+	int	i;
+
+	i = 0;
+	while (i < a->size)
+	{
+		if (a->data[i] < 0)
+			return (1);
+		i++;
+	}
+	return (0);
 }
