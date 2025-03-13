@@ -49,7 +49,7 @@ void	init_stack(t_stack *stack, int capacity);
 void	fill_stack(t_stack *stack, int argc, char **argv);
 void	print_stack(t_stack *a, t_stack *b);
 void	setup_stack(t_stack *a, t_stack *b, int ac, char **processed_args);
-void	cleanup_stack(t_stack *a, t_stack *b, char **processed_args);
+void	cleanup_stack(t_stack *a, t_stack *b, char **av, char **processed_args);
 
 /* Prototypes fonctions error_management */
 int		validate_input(int ac, char **av);
@@ -61,6 +61,7 @@ void	print_error_and_exit(void);
 int		contains_negative(t_stack *a);
 void	free_split_args(char **split_args);
 char	**process_arguments(int *argc, char **argv);
+void	sort_stack(t_stack *a, t_stack *b);
 
 /* Prototypes fonctions sort */
 void	sort_2(t_stack *a);

@@ -65,3 +65,14 @@ int	contains_negative(t_stack *a)
 	}
 	return (0);
 }
+
+void	sort_stack(t_stack *a, t_stack *b)
+{
+	if (!is_sorted(a))
+	{
+		if (a->size <= 10)
+			sort_small_stack(a, b);
+		else
+			sort_big_stack(a, b);
+	}
+}

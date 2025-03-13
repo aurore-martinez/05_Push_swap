@@ -69,9 +69,10 @@ void	setup_stack(t_stack *a, t_stack *b, int ac, char **processed_args)
 	fill_stack(a, ac, processed_args);
 }
 
-void	cleanup_stack(t_stack *a, t_stack *b, char **processed_args)
+void	cleanup_stack(t_stack *a, t_stack *b, char **av, char **processed_args)
 {
 	free(a->data);
 	free(b->data);
-	free_split_args(processed_args);
+	if (processed_args != av + 1)
+		free_split_args(processed_args);
 }

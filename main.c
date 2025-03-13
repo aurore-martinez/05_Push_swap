@@ -27,27 +27,13 @@ int	main(int ac, char **av)
 			free_split_args(processed_args);
 		print_error_and_exit();
 	}
-	init_stack(&a, ac);
-	init_stack(&b, ac);
-	fill_stack(&a, ac, processed_args);
+	setup_stack(&a, &b, ac, processed_args);
 	if (!check_duplicates(a.data, a.size))
 	{
-		free(a.data);
-		free(b.data);
-		if (processed_args != av + 1)
-			free_split_args(processed_args);
+		cleanup_stack(&a, &b, av, processed_args);
 		print_error_and_exit();
 	}
-	if (!is_sorted(&a))
-	{
-		if (a.size <= 10)
-			sort_small_stack(&a, &b);
-		else
-			sort_big_stack(&a, &b);
-	}
-	free(a.data);
-	free(b.data);
-	if (processed_args != av + 1)
-		free_split_args(processed_args);
+	sort_stack(&a, &b);
+	cleanup_stack(&a, &b, av, processed_args);
 	return (0);
 }

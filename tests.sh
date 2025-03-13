@@ -2,7 +2,7 @@
 
 # Nom du programme
 PROGRAM="./push_swap"
-CHECKER="./checker_MAC"
+CHECKER="./checker_linux"
 
 # Fonction pour compter le nombre d'instructions
 count_instructions() {
